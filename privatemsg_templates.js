@@ -1,4 +1,3 @@
-/* Thought this would work - it's not though */
 Drupal.behaviors.privatemsg_templates = function(context) {
   $('#edit-privatemsg-templates', context).bind('change', function(){    
 	var nid = this.selectedIndex;
