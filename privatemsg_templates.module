@@ -55,7 +55,7 @@ function privatemsg_template_settings(){
   
   $form['privatemsg_templates'] = array(
 	'#type' => 'fieldset',
-	'#title' => t('Configure'),
+	'#title' => t('Configure Privatemsg templates'),
   );
 
   $form['privatemsg_templates']['enable_privatemsg_templates'] = array(
