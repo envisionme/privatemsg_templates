@@ -1,0 +1,8 @@
+name = "Privatemsg Templates"
+description = "Provide privatemsg with message template functionality"
+version = "6.x-0.5"
+core = 6.x
+php = 5.1
+package = "Mail"
+dependencies[] = "privatemsg"
+
