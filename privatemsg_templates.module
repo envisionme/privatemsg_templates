@@ -24,7 +24,7 @@ function privatemsg_templates_menu() {
   );
   $items['privatemsg_templates/get_template/%'] = array(
     'page callback' => 'privatemsg_templates_get_template',
-    'page arguments' => array(1),
+    'page arguments' => array(2),
     'access arguments' => array('use privatemsg templates'),
     'type' => MENU_CALLBACK,
   );
@@ -36,9 +36,9 @@ function privatemsg_templates_menu() {
  */
 function privatemsg_templates_get_template($nid) {
   $template_type = variable_get('privatemsg_template_content_type', NULL);
-  $template = node_load(array('nid' => $nid, 'type' => $template_type));
-  if (!empty($template)) {
-    drupal_json(array('status' => 0, 'data' => $template->body));
+  $node = node_load(array('nid' => $nid, 'type' => $template_type));
+  if (!empty($node)) {
+    drupal_json(array('status' => 0, 'data' => $node->body));
   } else {
     drupal_json(array('status' => 0, 'data' => ''));
   }
@@ -87,7 +87,7 @@ function privatemsg_templates_form_privatemsg_new_alter(&$form, &$form_state) {
     /* Would like to add some kind of intelligence here - templates by role, user specific templates, etc
      * Probably a good idea to incorporate the template content type into this module for that?
      */
-    $result = db_query('SELECT nid, title FROM {node} WHERE type = "'.$type.'";');
+    $result = db_query("SELECT n.nid, n.title FROM {node} n WHERE n.type = '%s'", $type);
     $templates = array(t('Select a template'));
     while ($template = db_fetch_object($result)) {
       $templates[$template->nid] = $template->title;
