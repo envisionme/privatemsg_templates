@@ -8,7 +8,7 @@
 /**
  * Implementation of hook_perm().
  */
-function privatemsg_templates_extras_perm() {
+function privatemsg_templates_perm() {
   return array('administer privatemsg templates','use privatemsg templates');
 }
 
