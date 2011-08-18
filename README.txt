@@ -3,7 +3,7 @@ Privatemsg Templates is a Drupal module that provides templates for New Privatem
 For Drupal 6.x
 
 Dependencies
-	Privatemsg 	(http://drupal.org/project/privatemsg)
+ Privatemsg (http://drupal.org/project/privatemsg)
 
 Installation instructions:
 --------------------------
@@ -12,5 +12,6 @@ Installation instructions:
    3. Ensure that you have Privatemsg installed and activated
    4. Activate Privatemsg Templates module
    5. Give 'use privatemsg templates' permission to roles that should be able to use it.
-   6. Go to admin/settings/messages/templates and tick 'Enable private message templates' and select content type that will hold templates.
+   6. Go to admin/settings/messages/templates and tick 'Enable private message
+      templates' and select content type that will hold templates.
    7. Use it.
