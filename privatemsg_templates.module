@@ -74,7 +74,7 @@ function privatemsg_templates_settings() {
 function privatemsg_templates_form_privatemsg_new_alter(&$form, &$form_state) {
   $type = variable_get('privatemsg_templates_content_type', NULL);
   if (variable_get('privatemsg_templates_enable', 0) && !empty($type)) {
-    drupal_add_js(drupal_get_path('module', 'privatemsg_templates') .'/privatemsg_templates.js', 'file');
+    drupal_add_js(drupal_get_path('module', 'privatemsg_templates') .'/privatemsg_templates.js');
 
     /* Would like to add some kind of intelligence here - templates by role, user specific templates, etc
      * Probably a good idea to incorporate the template content type into this module for that?
